@@ -1,9 +1,10 @@
 import './App.css';
+import pokemon from './assets/pokemon.png';
 
 function App() {
   return (
     <div className="App">
-      <h1>Henry Pokemon</h1>
+      <img src={pokemon} alt='pokemon'></img>
     </div>
   );
 }
