@@ -15,7 +15,6 @@ router.get("/", async (req, res, next) => {
     let typeAllApi = await Promise.all(typeDetail).then((type) => {
       let typeDetails = type.map((details) => {
         return {
-          id: details.id,
           name: details.name,
         };
       });
@@ -26,6 +25,7 @@ router.get("/", async (req, res, next) => {
 
     const types = await Types.findAll();
     res.send(types);
+
   } catch (err) {
     next(err);
   }

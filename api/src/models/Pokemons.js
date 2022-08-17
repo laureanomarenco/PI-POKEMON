@@ -31,6 +31,12 @@ module.exports = (sequelize) => {
     },
     weight: {
       type: DataTypes.INTEGER,
+    },
+    imageDefault: {
+      type: DataTypes.STRING,
+    },
+    imageShiny: {
+      type: DataTypes.STRING,
     }
   });
 };
