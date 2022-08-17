@@ -3,6 +3,7 @@ export const FETCH_POKEMONS = 'FETCH_POKEMONS';
 export const SEARCH_POKEMONS = 'SEARCH_POKEMONS';
 export const GET_POKEMON_DETAILS = 'GET_POKEMON_DETAILS';
 export const SORT = 'SORT';
+export const FROM = 'FROM';
 
 export function fetchPokemons() {
     return function(dispatch) {
@@ -47,5 +48,12 @@ export function sort(order){
     return {
         type: SORT,
         payload: order,
+    }
+}
+
+export function from(place){
+    return {
+        type: FROM,
+        payload: place
     }
 }

@@ -37,6 +37,10 @@ module.exports = (sequelize) => {
     },
     imageShiny: {
       type: DataTypes.STRING,
-    }
+    },
+    created: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    },
   });
 };

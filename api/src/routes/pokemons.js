@@ -32,6 +32,7 @@ router.get("/", async (req, res, next) => {
           types: details.types.map((t) => t.type.name),
           imageDefault: details.sprites.front_default,
           imageShiny: details.sprites.front_shiny,
+          created: false,
         };
       });
       return pokeDetails;
@@ -60,6 +61,7 @@ router.get("/", async (req, res, next) => {
         types: poke.types.map((t) => t.name),
         imageDefault: poke.imageDefault,
         imageShiny: poke.imageShiny,
+        created: true,
       };
     });
 

@@ -3,14 +3,18 @@ import {
   GET_POKEMON_DETAILS,
   SEARCH_POKEMONS,
   SORT,
+  FROM
 } from "../actions";
 import {
   ASCNAME,
   DESCNAME,
   ASCATTACK,
   DESCATTACK,
-  DEF,
 } from "../../constants/sort";
+import {
+  API,
+  DB
+} from "../../constants/from";
 
 const initalState = {
   pokemons: [],
@@ -66,6 +70,22 @@ export default function reducer(state = initalState, action) {
         ...state,
         filteredPokemons: orderedPokemons,
       };
+
+      case FROM:
+        let pokemonsFrom = []
+        let pokemons = [...state.pokemons]
+        if(action.payload === API){
+        pokemons = pokemons.filter((p) => p.created !== true)
+          pokemonsFrom = pokemons
+        }
+        if(action.payload === DB){
+          pokemons = pokemons.filter((p) => p.created === true)
+          pokemonsFrom = pokemons
+        }
+        return {
+          ...state,
+          filteredPokemons: pokemonsFrom,
+        };
 
     default:
       return state;
