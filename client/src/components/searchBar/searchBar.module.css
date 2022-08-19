@@ -1,0 +1,18 @@
+.text_h1 {
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 26px;
+    color: #000000ec;
+    padding-top: 1vh;
+}
+
+.btn_search {
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: #000000ec;
+    padding: 0.6vh;
+}
+.input {
+    padding: 0.6vh 0 0.6vh 0;
+}
