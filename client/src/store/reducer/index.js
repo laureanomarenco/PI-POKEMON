@@ -2,23 +2,19 @@ import {
   FETCH_POKEMONS,
   GET_POKEMON_DETAILS,
   SEARCH_POKEMONS,
+  CREATE_POKEMON,
+  FETCH_TYPES,
   SORT,
-  FROM
+  FROM,
 } from "../actions";
-import {
-  ASCNAME,
-  DESCNAME,
-  ASCATTACK,
-  DESCATTACK,
-} from "../../constants/sort";
-import {
-  API,
-  DB
-} from "../../constants/from";
+import { ASCNAME, DESCNAME, ASCATTACK, DESCATTACK } from "../../constants/sort";
+import { API, DB } from "../../constants/from";
 
 const initalState = {
   pokemons: [],
   filteredPokemons: [],
+  pokemonById: [],
+  types: []
 };
 
 export default function reducer(state = initalState, action) {
@@ -40,6 +36,18 @@ export default function reducer(state = initalState, action) {
       return {
         ...state,
         filteredPokemons: action.payload,
+      };
+
+    case CREATE_POKEMON:
+      return {
+        ...state,
+        filteredPokemons: action.payload,
+      };
+
+    case FETCH_TYPES:
+      return {
+        ...state,
+        types: action.payload,
       };
 
     case SORT:
@@ -71,21 +79,21 @@ export default function reducer(state = initalState, action) {
         filteredPokemons: orderedPokemons,
       };
 
-      case FROM:
-        let pokemonsFrom = []
-        let pokemons = [...state.pokemons]
-        if(action.payload === API){
-        pokemons = pokemons.filter((p) => p.created !== true)
-          pokemonsFrom = pokemons
-        }
-        if(action.payload === DB){
-          pokemons = pokemons.filter((p) => p.created === true)
-          pokemonsFrom = pokemons
-        }
-        return {
-          ...state,
-          filteredPokemons: pokemonsFrom,
-        };
+    case FROM:
+      let pokemonsFrom = [];
+      let pokemons = [...state.pokemons];
+      if (action.payload === API) {
+        pokemons = pokemons.filter((p) => p.created !== true);
+        pokemonsFrom = pokemons;
+      }
+      if (action.payload === DB) {
+        pokemons = pokemons.filter((p) => p.created === true);
+        pokemonsFrom = pokemons;
+      }
+      return {
+        ...state,
+        filteredPokemons: pokemonsFrom,
+      };
 
     default:
       return state;

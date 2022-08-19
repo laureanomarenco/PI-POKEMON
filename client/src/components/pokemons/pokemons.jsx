@@ -1,11 +1,10 @@
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPokemons } from "../store/actions";
+import { fetchPokemons } from "../../store/actions";
 
-import Pokemon from "./pokemon";
-
-import pokemon from "../assets/pokemon.png";
-import { Link } from "react-router-dom";
+import p from './pokemons.module.css'
+import Pokemon from "../pokemon/pokemon.jsx";
 
 export default function Pokemons() {
   let pokemons = useSelector((state) => state.filteredPokemons);
@@ -16,17 +15,14 @@ export default function Pokemons() {
 
   return (
     <>
-      <div>
-        <img src={pokemon} alt="pokemon"></img>
-      </div>
       <Link to="/createPokemon">
-        <button>CREATE POKEMON</button>
+        <button className={p.btn_create}>CREATE POKEMON</button>
       </Link>
 
-      {pokemons.map((pokemon) => {
+      {pokemons?.map((pokemon, i) => {
         return (
           <Pokemon
-              key={pokemon.id}
+              key={i}
               id={pokemon.id}
               name={pokemon.name}
               imageDefault={pokemon.imageDefault}
@@ -38,7 +34,6 @@ export default function Pokemons() {
               weight={pokemon.weight}
               types={pokemon.types}
             />
-
         );
       })}
     </>
