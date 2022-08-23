@@ -4,6 +4,7 @@ import {
   SEARCH_POKEMONS,
   CREATE_POKEMON,
   FETCH_TYPES,
+  FILTER_BY_TYPE,
   SORT,
   FROM,
 } from "../actions";
@@ -35,7 +36,7 @@ export default function reducer(state = initalState, action) {
     case GET_POKEMON_DETAILS:
       return {
         ...state,
-        filteredPokemons: action.payload,
+        pokemonById: action.payload,
       };
 
     case CREATE_POKEMON:
@@ -50,6 +51,13 @@ export default function reducer(state = initalState, action) {
         types: action.payload,
       };
 
+    case FILTER_BY_TYPE:
+      let filteredByTypePokemons = [...state.pokemons];
+      filteredByTypePokemons = filteredByTypePokemons.filter(p => p.types.includes(action.payload))
+      return {
+        ...state,
+        filteredPokemons: filteredByTypePokemons,
+      }
     case SORT:
       let orderedPokemons = [...state.pokemons];
       if (action.payload === ASCNAME || action.payload === DESCNAME) {

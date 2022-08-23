@@ -1,9 +1,66 @@
 .background {
     height: 100vh;
-    background-image: linear-gradient(to bottom, #fab005 5%, #ff8787 95%);
-    
-    display: flex;
-    flex-direction: column;
+    background-image: radial-gradient(circle, #ffffff 0%, #eaeaea 100%);
     justify-content: flex-start;
     align-items: center;
+}
+
+.card {
+    justify-content: center;
+    background-color: rgb(206, 206, 206);
+    height: auto;
+    width: 70vw;
+    margin: 2rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.container_types {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    font-weight: 100;
+    color: #000000ec;
+    position: relative;
+    padding-bottom: 1vh;
+}
+
+.text_types {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    font-weight: 100;
+    color: #000000ec;
+    position: relative;
+    padding: 1vh;
+    margin: 0 1vh 2vh 1vh;
+    background-color: aqua;
+}
+
+.text_h4 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000ec;
+    position: relative;
+    margin-top: 2vh;
+}
+
+.image_pokemon {
+    position: relative;
+    height: 22vh;
+    width: auto;
+    margin: 2vh 0 -2vh 0;
+}
+
+.downloading {
+    width: 26vw;
+    height: auto;
+    padding: 3vh;
 }

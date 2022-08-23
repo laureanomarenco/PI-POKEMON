@@ -3,10 +3,6 @@ import dialog from "../../assets/dialog.png";
 import l from "./landingPage.module.css";
 
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { fetchTypes } from '../../store/actions';
-
 
 export default function LandingPage() {
   // let dispatch = useDispatch();

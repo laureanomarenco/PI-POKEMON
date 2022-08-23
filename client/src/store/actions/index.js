@@ -7,6 +7,7 @@ export const FETCH_TYPES = 'FETCH_TYPES';
 export const FETCH_BY_ID = 'FETCH_BY_ID';
 export const SORT = 'SORT';
 export const FROM = 'FROM';
+export const FILTER_BY_TYPE = 'FILTER_BY_TYPE';
 
 export function fetchPokemons() {
     return async function(dispatch) {
@@ -22,8 +23,8 @@ export function fetchPokemons() {
 }
 
 export function searchPokemons(search) {
-    return function(dispatch) {
-        axios.get(`http://localhost:3001/api/pokemons?name=${search}`)
+    return async function(dispatch) {
+        await axios.get(`http://localhost:3001/api/pokemons?name=${search}`)
         .then(pokemons => {
             dispatch({
                 type: SEARCH_POKEMONS,
@@ -69,6 +70,13 @@ export function fetchTypes() {
             })
         })
         .catch(err => {console.log(err)})
+    }
+}
+
+export function filterByType(type){
+    return {
+        type: FILTER_BY_TYPE,
+        payload: type,
     }
 }
 
