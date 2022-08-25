@@ -9,9 +9,7 @@ import n from './navBar.module.css';
 export default function NavBar() {
   return (
     <>
-      <Link to="/home">
-        <h1 className={n.text_h1}>Pokemon</h1>
-      </Link>
+      <Link  className={n.text_h1} to="/home">Pokemon</Link>
       <div className={n.container}>
         <div className={n.g1}>
           <Order />

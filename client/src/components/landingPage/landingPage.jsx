@@ -5,8 +5,6 @@ import l from "./landingPage.module.css";
 import { Link } from "react-router-dom";
 
 export default function LandingPage() {
-  // let dispatch = useDispatch();
-  // useEffect(() => dispatch(fetchTypes()), [])
   return (
     <>
       <Link to="/home">

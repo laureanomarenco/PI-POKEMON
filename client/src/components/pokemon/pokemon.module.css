@@ -1,11 +1,14 @@
 .card {
     display: flex;
     justify-content: center;
-    background-color: rgb(206, 206, 206);
     height: auto;
-    width: 60vw;
+    min-width: 20vw;
+    padding: 1vw;
     margin: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 8px 8px 10px 0px rgba(0,0,0,0.75);
 }
+
 
 .container {
     display: flex;
@@ -25,7 +28,19 @@
     position: relative;
     padding: 1vh;
     margin: 0 1vh 2vh 1vh;
-    background-color: aqua;
+    background-color: rgb(183, 213, 134);
+}
+
+.span {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    font-weight: 100;
+    color: #000000ec;
+    border-radius: 3px;
+    position: relative;
+    padding: 0.7vh;
+    margin: 0 1vh 2vh 1vh;
+    background-color: rgb(255, 255, 255, 50%);
 }
 
 .text_h4 {

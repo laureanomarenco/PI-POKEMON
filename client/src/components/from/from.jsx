@@ -20,7 +20,7 @@ export default function From() {
           <input name="from" value={API} type="radio" />
         </div>
         <div>
-          <label className={f.text_order}>database</label>
+          <label className={f.text_order}>ddbb</label>
           <input name="from" value={DB} type="radio" />
         </div>
         <br></br>

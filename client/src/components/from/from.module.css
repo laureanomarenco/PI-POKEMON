@@ -1,7 +1,8 @@
 .container {
     display: flex;
     flex-direction: column;
-    margin-top: 1vh;
+    margin: 1.6vh 0 1vh 0;
+    width: 8rem;
 }
 
 .text_order {
@@ -9,5 +10,4 @@
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
     color: #000000ec;
-    margin: 1vh;
 }

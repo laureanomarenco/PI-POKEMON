@@ -7,10 +7,13 @@
 
 .card {
     justify-content: center;
-    background-color: rgb(206, 206, 206);
+    width: 22rem;
     height: auto;
-    width: 70vw;
+    padding: 1vw;
     margin: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 8px 8px 10px 0px rgba(0,0,0,0.75);
+    border: 16px solid rgb(255, 225, 0);
 }
 
 .container {
@@ -29,7 +32,15 @@
     font-weight: 100;
     color: #000000ec;
     position: relative;
-    padding-bottom: 1vh;
+    padding: 0.5vh;
+}
+
+.text_h1 {
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(2.5rem, 2.5vw, 8rem);
+    color: #000000ec;
+    padding: 2vh 0 2vh 0;
 }
 
 .text_types {
@@ -40,7 +51,6 @@
     position: relative;
     padding: 1vh;
     margin: 0 1vh 2vh 1vh;
-    background-color: aqua;
 }
 
 .text_h4 {
@@ -48,19 +58,53 @@
     font-size: 16px;
     font-weight: 300;
     color: #000000ec;
-    position: relative;
-    margin-top: 2vh;
+    position: absolute;
+    margin: 1vh;
 }
-
+.text_hp {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000ec;
+    position: absolute;
+    margin: 1vh 1vh 1vh 26vh;
+}
+.container_hw {
+    background-color: rgb(255, 225, 0);
+    margin: 0 1.8vh 1vh 1.8vh;
+    justify-content: right;
+    border-radius: 2px;
+}
 .image_pokemon {
     position: relative;
     height: 22vh;
     width: auto;
     margin: 2vh 0 -2vh 0;
+    border-radius: 3px;
+}
+
+.container_image {
+    margin: 12px 12px 6px 12px;
+    border: 8px solid rgb(255, 225, 0);
+    border-radius: 5px;
+    margin-top: 3.5vh;
 }
 
 .downloading {
     width: 26vw;
     height: auto;
-    padding: 3vh;
+    margin: 8rem 3rem 3rem 3rem;
+    visibility: visible;
+    animation: tap 3s linear infinite;
+}
+@keyframes tap {
+    0% {
+       width: 26vw;
+    }
+    50%{
+        width: 32vw;
+    }
+    100% {
+       width: 26vw;
+    }
 }

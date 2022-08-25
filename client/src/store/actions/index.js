@@ -3,7 +3,7 @@ export const FETCH_POKEMONS = 'FETCH_POKEMONS';
 export const SEARCH_POKEMONS = 'SEARCH_POKEMONS';
 export const GET_POKEMON_DETAILS = 'GET_POKEMON_DETAILS';
 export const CREATE_POKEMON = 'CREATE_POKEMON';
-export const FETCH_TYPES = 'FETCH_TYPES';
+    export const FETCH_TYPES = 'FETCH_TYPES';
 export const FETCH_BY_ID = 'FETCH_BY_ID';
 export const SORT = 'SORT';
 export const FROM = 'FROM';
@@ -64,6 +64,7 @@ export function fetchTypes() {
     return async function(dispatch) {
         await axios.get('http://localhost:3001/api/types')
         .then(types => {
+            console.log(types)
             dispatch({
                 type: FETCH_TYPES,
                 payload: types.data

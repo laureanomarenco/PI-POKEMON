@@ -1,5 +1,24 @@
+.container {
+    display:flex;
+    justify-content: center;
+    flex-flow: wrap;
+}
+
 .downloading {
     width: 26vw;
     height: auto;
-    padding: 3vh;
+    margin: 8rem 3rem 3rem 3rem;
+    visibility: visible;
+    animation: tap 3s linear infinite;
+}
+@keyframes tap {
+    0% {
+       width: 26vw;
+    }
+    50%{
+        width: 32vw;
+    }
+    100% {
+       width: 26vw;
+    }
 }
