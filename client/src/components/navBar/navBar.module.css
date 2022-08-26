@@ -1,0 +1,41 @@
+.background {
+    background-image: radial-gradient(circle, #feffc4 0%, #fceccd 100%);
+    padding: 2vh 0 2vh 0;
+    box-shadow: 8px 8px 10px 0px rgba(0,0,0,0.75);
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.text_h1 {
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(2.5rem, 2.5vw, 8rem);
+    color: #000000ec;
+    padding: 2vh 0 4vh 0;
+}
+
+.btn_create {
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 100;
+    font-size: 12px;
+    background-color: rgb(50, 200, 75);
+    color: rgb(255, 255, 255);
+    padding: 1vh;
+    border: 3px solid rgb(0, 0, 0);
+    box-shadow: inset -4px -4px 0 rgb(50, 160, 75);
+}
+
+.btn_create:hover    {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    background-color: rgb(50, 190, 75);
+    color: rgb(245, 245, 245);
+    padding: 1vh;
+    
+    border: 3px solid rgb(0, 0, 0);
+    box-shadow: inset -5px -5px 0 rgb(50, 150, 75);
+    cursor: pointer;
+}

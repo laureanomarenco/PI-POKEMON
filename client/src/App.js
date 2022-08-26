@@ -1,11 +1,10 @@
-import "./App.css";
-import LandingPage from "./components/landingPage/landingPage.jsx";
-import Pokemons from "./components/pokemons/pokemons.jsx";
-import CreatePokemon from "./components/createPokemon/createPokemon.jsx";
-import PokemonDetails from "./components/pokemonDetails/pokemonDetails.jsx";
-import SearchBar from "./components/searchBar/searchBar.jsx";
-import Order from "./components/order/order.jsx";
 import { Switch, Route } from "react-router-dom";
+
+import LandingPage from "./components/landingPage/landingPage.jsx";
+import Home from './components/home/home';
+import PokemonDetails from "./components/pokemonDetails/pokemonDetails.jsx";
+import CreatePokemon from "./components/createPokemon/createPokemon.jsx";
+import "./App.css";
 
 function App() {
   return (
@@ -15,9 +14,7 @@ function App() {
       </Route>
       <Switch>
         <Route path="/home">
-          <SearchBar />
-          <Order />
-          <Pokemons />
+          <Home />
         </Route>
         <Route path="/pokemonDetails/:id">
           <PokemonDetails />

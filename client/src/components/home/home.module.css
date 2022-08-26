@@ -1,0 +1,9 @@
+.background {
+    min-height: 100vh;
+    height: auto;
+    width: 100vw;
+    background-image: radial-gradient(circle, #ffffff 0%, #eaeaea 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}

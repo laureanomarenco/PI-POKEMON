@@ -1,0 +1,20 @@
+.container {
+    margin-top: 4vh;
+}
+
+.btn_pagination {
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    font-weight: 100;
+    color: #000000ec;
+    position: relative;
+    padding: 1vh;
+    margin: 0 1vh 2vh 1vh;
+}

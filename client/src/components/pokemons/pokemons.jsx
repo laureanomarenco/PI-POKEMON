@@ -1,27 +1,41 @@
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPokemons } from "../../store/actions";
 
-import p from './pokemons.module.css'
+import p from "./pokemons.module.css";
 import Pokemon from "../pokemon/pokemon.jsx";
+import Pagination from "../pagination/pagination";
+import downloading from '../../assets/downloading.png';
 
 export default function Pokemons() {
   let pokemons = useSelector((state) => state.filteredPokemons);
+  const [currentPage , setCurrentPage] = useState(1);
+  const [items] = useState(12);
+
+  const max = Math.ceil(pokemons.length / items)
+
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchPokemons());
-  }, []);
+  }, [dispatch]);
+
 
   return (
     <>
-      <Link to="/createPokemon">
-        <button className={p.btn_create}>CREATE POKEMON</button>
-      </Link>
-
-      {pokemons?.map((pokemon, i) => {
-        return (
-          <Pokemon
+      <div>
+        <Pagination 
+          className={p.pagination}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          max={max}
+        />
+      </div>
+      <div className={p.container}>
+        {pokemons.length === 0 ? <img className={p.downloading} src={downloading} alt='downloading'/>
+        :
+        pokemons?.slice((currentPage * items) - items, (currentPage * items)).map((pokemon, i) => {
+          return (
+            <Pokemon
               key={i}
               id={pokemon.id}
               name={pokemon.name}
@@ -34,8 +48,9 @@ export default function Pokemons() {
               weight={pokemon.weight}
               types={pokemon.types}
             />
-        );
-      })}
+          );
+        })}
+      </div>
     </>
   );
 }

@@ -21,9 +21,11 @@ router.get("/", async (req, res, next) => {
       return typeDetails;
     });
 
-    await Types.bulkCreate(typeAllApi);
-
     const types = await Types.findAll();
+    if(types.length === 0) {
+      await Types.bulkCreate(typeAllApi);
+    }
+
     res.send(types);
 
   } catch (err) {

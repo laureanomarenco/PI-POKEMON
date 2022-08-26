@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 1.6vh 0 1vh 0;
+    width: 8rem;
+  }
+.text_order {
+  text-decoration: none;
+  font-family: "Press Start 2P", cursive;
+  font-size: 12px;
+  color: #000000ec;
+}
+.check {
+    border: 1px solid goldenrod;
+}

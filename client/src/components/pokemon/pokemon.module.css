@@ -1,46 +1,84 @@
-.card {
+@media (max-width: 600px) {
+  .card {
     display: flex;
     justify-content: center;
-    background-color: rgb(206, 206, 206);
     height: auto;
-    width: 60vw;
+    min-width: 60vw;
+    padding: 1vw;
     margin: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.75);
+  }
 }
 
-.container {
+@media (min-width: 600px) {
+  .card {
     display: flex;
     justify-content: center;
+    height: auto;
+    min-width: 20vw;
+    padding: 1vw;
+    margin: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.75);
+  }
+}
+.card:hover {
+  animation-name: scala;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+@keyframes scala {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
 
 .container_types {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .text {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 12px;
-    font-weight: 100;
-    color: #000000ec;
-    position: relative;
-    padding: 1vh;
-    margin: 0 1vh 2vh 1vh;
-    background-color: aqua;
+  font-family: "Press Start 2P", cursive;
+  font-size: 12px;
+  font-weight: 100;
+  color: #000000ec;
+  position: relative;
+  padding: 1vh;
+  margin: 0 1vh 2vh 1vh;
+  background-color: rgb(183, 213, 134);
+}
+
+.span {
+  font-family: "Press Start 2P", cursive;
+  font-size: 12px;
+  font-weight: 100;
+  color: #000000ec;
+  border-radius: 3px;
+  position: relative;
+  padding: 0.7vh;
+  margin: 0 1vh 2vh 1vh;
+  background-color: rgb(255, 255, 255, 50%);
 }
 
 .text_h4 {
-    text-decoration: none;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 16px;
-    font-weight: 300;
-    color: #000000ec;
-    position: absolute;
-    margin-top: 2vh;
+  text-decoration: none;
+  font-family: "Press Start 2P", cursive;
+  font-size: 16px;
+  font-weight: 300;
+  color: #000000ec;
+  position: absolute;
+  margin-top: 2vh;
 }
 
 .image_pokemon {
-    position: relative;
-    height: 22vh;
-    width: auto;
-    margin: 2vh 0 -2vh 0;
+  position: relative;
+  height: 22vh;
+  width: auto;
+  margin: 2vh 0 -2vh 0;
 }

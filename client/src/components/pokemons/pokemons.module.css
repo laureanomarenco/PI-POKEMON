@@ -1,7 +1,52 @@
-.btn_create {
-    text-decoration: none;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 16px;
-    color: #000000ec;
-    padding: 1vh;
+@media (max-width: 600px) {
+  .downloading {
+    width: 26vw;
+    height: auto;
+    margin: 5rem 3rem 3rem 3rem;
+    visibility: visible;
+    animation: tap 3s linear infinite;
+  }
+  @keyframes tap {
+    0% {
+      width: 26vw;
+    }
+    50% {
+      width: 32vw;
+    }
+    100% {
+      width: 26vw;
+    }
+  }
 }
+
+@media (min-width: 600px) {
+  .downloading {
+    width: 12vw;
+    height: auto;
+    margin: 4rem 3rem 3rem 3rem;
+    visibility: visible;
+    animation: tap 3s linear infinite;
+  }
+  @keyframes tap {
+    0% {
+      width: 12vw;
+    }
+    50% {
+      width: 16vw;
+    }
+    100% {
+      width: 12vw;
+    }
+  }
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+.pagination {
+  position: fixed;
+  top: 20px;
+}
+
+
