@@ -70,7 +70,6 @@ export default function PokemonDetails() {
               <span className={p.text}>height {detail.height} </span>
               <span className={p.text}>weight {detail.weight}</span>
             </div>
-              <span className={p.text}>type</span>
             {detail?.types?.map((t, i) => {
               return (
                 <span key={i} className={p.text_types}>
@@ -79,7 +78,7 @@ export default function PokemonDetails() {
               );
             })}
 
-<div>
+            <div className={p.container_stats}>
               <p className={p.text}>attack {detail.attack}</p>
               <p className={p.text}>defense {detail.defense}</p>
               <p className={p.text}>velocity {detail.velocity}</p>

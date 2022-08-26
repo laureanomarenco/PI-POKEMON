@@ -14,14 +14,13 @@ export default function From() {
   return (
     <>
       <label className={f.container} onChange={onCheckboxChange}>
-        {/* <p className={f.text_order}>Filter from</p> */}
         <div>
           <label className={f.text_order}>api</label>
-          <input name="from" value={API} type="radio" />
+          <input className={f.check} name="from" value={API} type="checkbox" />
         </div>
         <div>
           <label className={f.text_order}>ddbb</label>
-          <input name="from" value={DB} type="radio" />
+          <input className={f.check} name="from" value={DB} type="checkbox" />
         </div>
         <br></br>
       </label>

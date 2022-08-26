@@ -74,7 +74,7 @@ router.get("/", async (req, res, next) => {
       let pokemonByName = allPokemons.filter((poke) => poke.name === name);
       res.send(pokemonByName);
     }
-
+    // If not return all the Pokemons
     res.send(allPokemons);
   } catch (err) {
     next(err);
@@ -83,35 +83,23 @@ router.get("/", async (req, res, next) => {
 
 // GET - Pokemon by id
 router.get("/:id", async (req, res, next) => {
-  // Call API to get the list of Pokemons
-  const { id } = req.params;
+  try {
+    // Call API to get the list of Pokemons
+    const { id } = req.params;
 
-  if (id.length > 4) {
-    // Find the Pokemons in the DB, map and return
-    // let pokePromiseDb = await Pokemons.findAll();
-    // let pokeAllDb = pokePromiseDb.map((poke) => {
-    //   return {
-    //     id: poke.id,
-    //     name: poke.name,
-    //     hp: poke.hp,
-    //     attack: poke.attack,
-    //     defense: poke.defense,
-    //     velocity: poke.velocity,
-    //     height: poke.height,
-    //     weight: poke.weight,
-    //   };
-    // });
-    let pokePromiseDb = await Pokemons.findByPk(id, {
-      include: {
-        model: Types,
-        attributes: ["name"],
-        through: {
-          attributes: [],
+    if (id.length > 4) {
+      // Find the Pokemon in the DB by pk, define the data and return
+      let pokePromiseDb = await Pokemons.findByPk(id, {
+        include: {
+          model: Types,
+          attributes: ["name"],
+          through: {
+            attributes: [],
+          },
         },
-      },
-    });
+      });
 
-    let pokeAllDb = {
+      let pokeAllDb = {
         id: pokePromiseDb.id,
         name: pokePromiseDb.name,
         hp: pokePromiseDb.hp,
@@ -124,37 +112,38 @@ router.get("/:id", async (req, res, next) => {
         imageDefault: pokePromiseDb.imageDefault,
         imageShiny: pokePromiseDb.imageShiny,
       };
-    // Join data in API and DB, then return
-    //let pokemonById = pokeAllDb.filter((poke) => poke.id === id);
-    res.send(pokeAllDb);
-  } else {
-
-    
-    let pokePromiseApi = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon/${id}`
+      res.send(pokeAllDb);
+    } else {
+      // Do the same process with the API
+      let pokePromiseApi = await axios.get(
+        `https://pokeapi.co/api/v2/pokemon/${id}`
       );
-      
-  let pokeDetails = {
-    id: pokePromiseApi.data.id,
-    name: pokePromiseApi.data.name,
-    hp: pokePromiseApi.data.stats[0].base_stat,
-    attack: pokePromiseApi.data.stats[1].base_stat,
-    defense: pokePromiseApi.data.stats[2].base_stat,
-    velocity: pokePromiseApi.data.stats[5].base_stat,
-    height: pokePromiseApi.data.height,
-    weight: pokePromiseApi.data.weight,
-    types: pokePromiseApi.data.types.map((t) => t.type.name),
-    imageDefault: pokePromiseApi.data.sprites.front_default,
-    imageShiny: pokePromiseApi.data.sprites.front_shiny,
-    created: false,
-  };
-  res.send(pokeDetails);
+
+      let pokeDetails = {
+        id: pokePromiseApi.data.id,
+        name: pokePromiseApi.data.name,
+        hp: pokePromiseApi.data.stats[0].base_stat,
+        attack: pokePromiseApi.data.stats[1].base_stat,
+        defense: pokePromiseApi.data.stats[2].base_stat,
+        velocity: pokePromiseApi.data.stats[5].base_stat,
+        height: pokePromiseApi.data.height,
+        weight: pokePromiseApi.data.weight,
+        types: pokePromiseApi.data.types.map((t) => t.type.name),
+        imageDefault: pokePromiseApi.data.sprites.front_default,
+        imageShiny: pokePromiseApi.data.sprites.front_shiny,
+        created: false,
+      };
+      res.send(pokeDetails);
+    }
+  } catch (err) {
+    next(err);
   }
 });
 
 // POST - create a new Pokemon
 router.post("/", async (req, res, next) => {
   try {
+    // Destructiring of the data passed in the body
     const {
       name,
       hp,

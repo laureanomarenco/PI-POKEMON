@@ -10,7 +10,7 @@ import downloading from '../../assets/downloading.png';
 export default function Pokemons() {
   let pokemons = useSelector((state) => state.filteredPokemons);
   const [currentPage , setCurrentPage] = useState(1);
-  const [items, setItems] = useState(12);
+  const [items] = useState(12);
 
   const max = Math.ceil(pokemons.length / items)
 
@@ -24,6 +24,7 @@ export default function Pokemons() {
     <>
       <div>
         <Pagination 
+          className={p.pagination}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           max={max}

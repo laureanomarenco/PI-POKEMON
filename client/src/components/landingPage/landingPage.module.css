@@ -4,6 +4,14 @@
     color: inherit;
 }
 
+@media (max-width: 600px) {
+
+  }
+  
+  @media (min-width: 600px) {
+
+  }
+
 .background {
     height: 100vh;
     background-image: linear-gradient(to bottom, #fab005 5%, #ff8787 95%);
@@ -13,7 +21,9 @@
     justify-content: flex-start;
     align-items: center;
 }
-
+.container {
+    display: flex;
+}
 .start_url {
     width: 80vw;
     margin-top: 10vh;
@@ -32,31 +42,37 @@
 }
 
 .pikachu {
-    width: 40vw;
+    width: 40vh;
     height: auto;
-    padding-top: 12vh;
-}
-
-.dialog {
-    width: 46vw;
-    padding-bottom: 6rem;
+    margin-top: 2vh;
 }
 
 .text {
     text-decoration: none;
+    margin-top: 2vh;
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
     color: #000000ec;
-    position: absolute;
-    top: 11vh;
-    left: 49vw;
+    background-color: rgb(255, 255, 255);
+    padding: 3vh;
+    border-radius: 5px;
 }
 
 .text_h1 {
     text-decoration: none;
     font-family: 'Press Start 2P', cursive;
-    font-size: 26px;
+    font-size: clamp(2.5rem, 2.5vw, 8rem);
     color: #000000ec;
-    position: absolute;
-    top: 2vh;
+    margin-top: 2vh;
+}
+
+.linkedin {
+    width: auto;
+    height: 12vh;
+    margin: 1vh;
+}
+
+.github {
+    width: auto;
+    height: 14vh;
 }

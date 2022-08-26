@@ -1,6 +1,12 @@
+.background {
+    background-image: radial-gradient(circle, #feffc4 0%, #fceccd 100%);
+    padding: 2vh 0 2vh 0;
+    box-shadow: 8px 8px 10px 0px rgba(0,0,0,0.75);
+}
+
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .text_h1 {
@@ -8,7 +14,7 @@
     font-family: 'Press Start 2P', cursive;
     font-size: clamp(2.5rem, 2.5vw, 8rem);
     color: #000000ec;
-    padding: 2vh 0 2vh 0;
+    padding: 2vh 0 4vh 0;
 }
 
 .btn_create {

@@ -9,6 +9,7 @@ import n from './navBar.module.css';
 export default function NavBar() {
   return (
     <>
+    <div className={n.background}>
       <Link  className={n.text_h1} to="/home">Pokemon</Link>
       <div className={n.container}>
         <div className={n.g1}>
@@ -23,6 +24,7 @@ export default function NavBar() {
       <Link to="/createPokemon">
         <button className={n.btn_create}>CREATE POKEMON</button>
       </Link>
+    </div>
     </>
   );
 }

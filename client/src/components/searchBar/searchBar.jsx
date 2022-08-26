@@ -20,7 +20,7 @@ export default function SearchBar() {
   return (
     <>
       <form className={s.container} onSubmit={onSubmit}>
-        <input className={s.input} type="text" onChange={onInputChange} value={search} placeholder='Search pokemon' />
+        <input className={s.input} type="text" onChange={onInputChange} value={search} placeholder=' Search pokemon' />
         <input className={s.btn_search} type="submit" value="Search" />
       </form>
     </>
