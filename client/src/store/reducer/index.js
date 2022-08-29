@@ -5,6 +5,7 @@ import {
   CREATE_POKEMON,
   FETCH_TYPES,
   FILTER_BY_TYPE,
+  CLEAN_DETAIL,
   SORT,
   FROM,
 } from "../actions";
@@ -57,7 +58,14 @@ export default function reducer(state = initalState, action) {
       return {
         ...state,
         filteredPokemons: filteredByTypePokemons,
-      }
+      };
+
+    case CLEAN_DETAIL:
+      return {
+        ...state,
+        pokemonById: action.payload,
+      };
+
     case SORT:
       let orderedPokemons = [...state.pokemons];
       if (action.payload === ASCNAME || action.payload === DESCNAME) {

@@ -3,11 +3,12 @@ export const FETCH_POKEMONS = 'FETCH_POKEMONS';
 export const SEARCH_POKEMONS = 'SEARCH_POKEMONS';
 export const GET_POKEMON_DETAILS = 'GET_POKEMON_DETAILS';
 export const CREATE_POKEMON = 'CREATE_POKEMON';
-    export const FETCH_TYPES = 'FETCH_TYPES';
+export const FETCH_TYPES = 'FETCH_TYPES';
 export const FETCH_BY_ID = 'FETCH_BY_ID';
 export const SORT = 'SORT';
 export const FROM = 'FROM';
 export const FILTER_BY_TYPE = 'FILTER_BY_TYPE';
+export const CLEAN_DETAIL = 'CLEAN_DETAIL';
 
 export function fetchPokemons() {
     return async function(dispatch) {
@@ -78,6 +79,13 @@ export function filterByType(type){
     return {
         type: FILTER_BY_TYPE,
         payload: type,
+    }
+}
+
+export function cleanDetail(){
+    return {
+        type: CLEAN_DETAIL,
+        payload: []
     }
 }
 

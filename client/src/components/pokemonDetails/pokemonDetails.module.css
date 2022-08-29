@@ -2,7 +2,7 @@
   .downloading {
     width: 26vw;
     height: auto;
-    margin: 8rem 3rem 3rem 3rem;
+    margin: 5rem 3rem 3rem 3rem;
     visibility: visible;
     animation: tap 3s linear infinite;
   }
@@ -20,7 +20,7 @@
 
   .background {
     height: 100vh;
-    background-image: radial-gradient(circle, #ffffff 0%, #eaeaea 100%);
+    background-image: url('../../assets/forest2.png');
     justify-content: flex-start;
     align-items: center;
   }
@@ -55,6 +55,8 @@
     font-size: clamp(2.5rem, 2.5vw, 8rem);
     color: #000000ec;
     padding: 2vh 0 2vh 0;
+    background-image: radial-gradient(circle, #feffc4 0%, #fceccd 100%);
+
   }
   
   .text_types {
@@ -121,8 +123,7 @@
 
 @media (min-width: 600px) {
   .downloading {
-    width: 12vw;
-    height: auto;
+    width: 6vw;
     margin: 4rem 3rem 3rem 3rem;
     visibility: visible;
     animation: tap 3s linear infinite;
@@ -133,7 +134,7 @@
     width: 22rem;
     height: 26rem;
     padding: 1vw;
-    margin: 2rem;
+    margin-top: 10vh;
     border-radius: 0.5rem;
     box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.75);
     border: 16px solid #fcff40;
@@ -141,7 +142,9 @@
 
   .background {
     height: 100vh;
-    background-image: radial-gradient(circle, #ffffff 0%, #eaeaea 100%);
+    background-image: url('../../assets/forest2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     justify-content: flex-start;
     align-items: center;
   }
@@ -171,6 +174,7 @@
     font-size: clamp(2.5rem, 2.5vw, 8rem);
     color: #000000ec;
     padding: 2vh 0 2vh 0;
+    background-image: radial-gradient(circle, #feffc4 0%, #fceccd 100%);
   }
   
   .text_types {

@@ -2,7 +2,11 @@
     min-height: 100vh;
     height: auto;
     width: 100vw;
-    background-image: radial-gradient(circle, #ffffff 0%, #eaeaea 100%);
+    background-image: linear-gradient(
+        45deg,
+        rgb(255, 246, 152) 0%,
+        rgb(189, 255, 183) 100%
+      );
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
