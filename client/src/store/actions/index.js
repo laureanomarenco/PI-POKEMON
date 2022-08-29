@@ -51,13 +51,13 @@ export function getPokemonDetails(id) {
 export function createPokemon(pokemon) {
     return async function(dispatch) {
         await axios.post('http://localhost:3001/api/pokemons', pokemon)
-        .then(pokemons => {
-            dispatch({
-                type: CREATE_POKEMON,
-                payload: pokemons.data
-            })
-        })
-        .catch(err => {console.log(err)})
+        // .then(pokemons => {
+        //     dispatch({
+        //         type: CREATE_POKEMON,
+        //         payload: pokemons.data
+        //     })
+        // })
+        // .catch(err => {console.log(err)})
     }
 }
 

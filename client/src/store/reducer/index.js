@@ -43,7 +43,6 @@ export default function reducer(state = initalState, action) {
     case CREATE_POKEMON:
       return {
         ...state,
-        filteredPokemons: action.payload,
       };
 
     case FETCH_TYPES:
