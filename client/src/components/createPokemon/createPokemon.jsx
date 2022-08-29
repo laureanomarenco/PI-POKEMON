@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { createPokemon, fetchTypes } from "../../store/actions";
 import validate from "./validate";
 import c from "./createPokemon.module.css";
@@ -60,7 +60,7 @@ export default function CreatePokemon() {
   const [errors, setErrors] = useState({});
   let types = useSelector((state) => state.types);
   let dispatch = useDispatch();
-
+  let history = useHistory()
   useEffect(() => {
     dispatch(fetchTypes());
   }, [dispatch]);
@@ -94,6 +94,8 @@ export default function CreatePokemon() {
   function onSubmit(e) {
     e.preventDefault();
     dispatch(createPokemon(pokemon));
+    alert('Pokemon created, go back to see it');
+    history.push('/')
   }
 
   function handleDeleteSelection(e) {
@@ -216,7 +218,7 @@ export default function CreatePokemon() {
               <option value="" className={c.text}>
                 Select Types
               </option>
-              {types?.map((type, i) => {
+              {types.lenght === 0 ? (<p>Searching types</p>) : types.map((type, i) => {
                 return (
                   <option key={i} value={type.name}>
                     {type.name}

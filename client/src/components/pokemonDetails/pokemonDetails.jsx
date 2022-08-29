@@ -43,10 +43,10 @@ export default function PokemonDetails() {
       <Link to="/home">
         <h1 className={p.text_h1}>Pokemon</h1>
       </Link>
-      <div className={p.container}>
         {detail.length === 0 ? (
           <img className={p.downloading} src={downloading} alt="downloading" />
         ) : (
+          <div className={p.container}>
           <div
             className={p.card}
             style={{
@@ -84,8 +84,8 @@ export default function PokemonDetails() {
               <p className={p.text}>velocity {detail.velocity}</p>
             </div>
           </div>
-        )}
       </div>
+        )}
     </div>
   );
 }

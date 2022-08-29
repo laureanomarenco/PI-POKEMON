@@ -44,9 +44,6 @@
   justify-content: center;
   flex-flow: wrap;
 }
-.pagination {
-  position: fixed;
-  top: 20px;
-}
+
 
 
