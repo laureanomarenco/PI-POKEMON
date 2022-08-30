@@ -6,6 +6,7 @@ import {
   FETCH_TYPES,
   FILTER_BY_TYPE,
   CLEAN_DETAIL,
+  CLEAN_POKEMONS,
   SORT,
   FROM,
 } from "../actions";
@@ -63,6 +64,12 @@ export default function reducer(state = initalState, action) {
       return {
         ...state,
         pokemonById: action.payload,
+      };
+    
+    case CLEAN_POKEMONS:
+      return {
+        ...state,
+        filteredPokemons: action.payload,
       };
 
     case SORT:

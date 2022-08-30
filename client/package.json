@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --testTimeout=15000",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

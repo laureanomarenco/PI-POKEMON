@@ -17,7 +17,7 @@ export default function Pokemons() {
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchPokemons());
-  }, [dispatch]);
+  }, [dispatch]); // delay in pagination
 
 
   return (

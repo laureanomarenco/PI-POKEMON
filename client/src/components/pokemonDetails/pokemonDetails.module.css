@@ -132,7 +132,7 @@
   .card {
     justify-content: center;
     width: 22rem;
-    height: 26rem;
+    height: auto;
     padding: 1vw;
     margin-top: 10vh;
     border-radius: 0.5rem;
@@ -207,7 +207,7 @@
     font-weight: 300;
     color: #000000ec;
     position: absolute;
-    margin: 0.5vh 1vh 1vh 36vh;
+    margin: 0.2rem 1rem 1rem 14rem;
   }
   .container_hw {
     background-color: #fcff40;
