@@ -9,6 +9,7 @@ export const SORT = 'SORT';
 export const FROM = 'FROM';
 export const FILTER_BY_TYPE = 'FILTER_BY_TYPE';
 export const CLEAN_DETAIL = 'CLEAN_DETAIL';
+export const CLEAN_POKEMONS = 'CLEAN_POKEMONS';
 
 export function fetchPokemons() {
     return async function(dispatch) {
@@ -51,13 +52,6 @@ export function getPokemonDetails(id) {
 export function createPokemon(pokemon) {
     return async function(dispatch) {
         await axios.post('http://localhost:3001/api/pokemons', pokemon)
-        // .then(pokemons => {
-        //     dispatch({
-        //         type: CREATE_POKEMON,
-        //         payload: pokemons.data
-        //     })
-        // })
-        // .catch(err => {console.log(err)})
     }
 }
 
@@ -85,6 +79,13 @@ export function filterByType(type){
 export function cleanDetail(){
     return {
         type: CLEAN_DETAIL,
+        payload: []
+    }
+}
+
+export function cleanPokemons(){
+    return {
+        type: CLEAN_POKEMONS,
         payload: []
     }
 }
