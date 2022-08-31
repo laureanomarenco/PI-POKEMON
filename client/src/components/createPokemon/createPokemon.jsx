@@ -208,7 +208,7 @@ export default function CreatePokemon() {
             ))}
           </div>
 
-          {pokemon.types.length < 2 ? (
+          {pokemon.types.length < 2 && (
             <select
               name="types"
               id=""
@@ -226,8 +226,6 @@ export default function CreatePokemon() {
                 );
               })}
             </select>
-          ) : (
-            <p className={c.danger}>You can't add more than two types.</p>
           )}
           <input className={c.btn_submit} type="submit" value="Submit" />
         </form>

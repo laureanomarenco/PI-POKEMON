@@ -21,6 +21,8 @@
   .background {
     height: 100vh;
     background-image: url('../../assets/forest2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     justify-content: flex-start;
     align-items: center;
   }
