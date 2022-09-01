@@ -72,10 +72,16 @@ router.get("/", async (req, res, next) => {
     const { name } = req.query;
     if (name) {
       let pokemonByName = allPokemons.filter((poke) => poke.name === name);
-      res.send(pokemonByName);
+      if(pokemonByName.length > 0){
+        res.send(pokemonByName)
+      } else {
+        res.send({msg: "There's no Pokemon with that name"})
+      }
+    } 
+    // If not return all the Pokemon
+    else {
+      res.send(allPokemons);
     }
-    // If not return all the Pokemons
-    res.send(allPokemons);
   } catch (err) {
     next(err);
   }

@@ -1,8 +1,7 @@
 export default function validate(state) {
   const errors = {};
 
-  const validatorURL =
-    /[(http(s)?):(www)?a-zA-Z0-9@:%._~#=]{2,256}[a-z]{2,6}\b([-a-zA-Z0-9@:%_.~#?&//=]*)/gi;
+  const validatorURL =  /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig
 
   if (!state.name) {
     errors.name = "Your Pokemon needs to have a name";

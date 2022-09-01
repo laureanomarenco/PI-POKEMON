@@ -1,7 +1,7 @@
 import React from "react";
 import { ALL } from '../../constants/sort';
 import { useSelector, useDispatch } from "react-redux";
-import { filterByType } from '../../store/actions';
+import { filterByType, cleanPagination } from '../../store/actions';
 
 import f from './filterByType.module.css'
 
@@ -12,10 +12,10 @@ export default function FilterByType() {
   let availableTypes = [...types0, ...types1];
   let uniqueRawTypes = [...new Set(availableTypes)];
   let uniqueTypes = uniqueRawTypes.filter((k) => k !== undefined);
-
   let dispatch = useDispatch();
-
+  
   function onSelectChangeType(e) {
+    dispatch(cleanPagination())
     dispatch(filterByType(e.target.value));
   }
 

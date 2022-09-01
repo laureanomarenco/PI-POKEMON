@@ -10,6 +10,8 @@ export const FROM = 'FROM';
 export const FILTER_BY_TYPE = 'FILTER_BY_TYPE';
 export const CLEAN_DETAIL = 'CLEAN_DETAIL';
 export const CLEAN_POKEMONS = 'CLEAN_POKEMONS';
+export const CLEAN_PAGINATION = 'CLEAN_PAGINATION';
+export const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 
 export function fetchPokemons() {
     return async function(dispatch) {
@@ -76,6 +78,12 @@ export function filterByType(type){
     }
 }
 
+export function setCurrentPage(set){
+    return {
+        type: SET_CURRENT_PAGE,
+        payload: set,
+    }
+}
 export function cleanDetail(){
     return {
         type: CLEAN_DETAIL,
@@ -87,6 +95,13 @@ export function cleanPokemons(){
     return {
         type: CLEAN_POKEMONS,
         payload: []
+    }
+}
+
+export function cleanPagination(){
+    return {
+        type: CLEAN_PAGINATION,
+        payload: 1
     }
 }
 

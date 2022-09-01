@@ -9,16 +9,17 @@ import downloading from '../../assets/downloading.png';
 
 export default function Pokemons() {
   let pokemons = useSelector((state) => state.filteredPokemons);
-  const [currentPage , setCurrentPage] = useState(1);
+  let currentPage = useSelector((state) => state.pagination);
+  //const [currentPage , setCurrentPage] = useState(1);
   const [items] = useState(12);
 
   const max = Math.ceil(pokemons.length / items)
 
-  let dispatch = useDispatch();
+  let dispatch = useDispatch();  
+
   useEffect(() => {
     dispatch(fetchPokemons());
-  }, [dispatch]); // delay in pagination
-
+  }, [dispatch]);
 
   return (
     <>
@@ -26,12 +27,12 @@ export default function Pokemons() {
         <Pagination 
           className={p.pagination}
           currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
           max={max}
         />
       </div>
       <div className={p.container}>
         {pokemons.length === 0 ? <img className={p.downloading} src={downloading} alt='downloading'/>
+        : pokemons.msg? <p className={p.errormsg}>{pokemons.msg}</p>
         :
         pokemons?.slice((currentPage * items) - items, (currentPage * items)).map((pokemon, i) => {
           return (

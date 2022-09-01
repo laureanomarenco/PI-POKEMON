@@ -7,6 +7,8 @@ import {
   FILTER_BY_TYPE,
   CLEAN_DETAIL,
   CLEAN_POKEMONS,
+  CLEAN_PAGINATION,
+  SET_CURRENT_PAGE,
   SORT,
   FROM,
 } from "../actions";
@@ -17,7 +19,8 @@ const initalState = {
   pokemons: [],
   filteredPokemons: [],
   pokemonById: [],
-  types: []
+  types: [],
+  pagination: 1
 };
 
 export default function reducer(state = initalState, action) {
@@ -60,6 +63,20 @@ export default function reducer(state = initalState, action) {
         filteredPokemons: filteredByTypePokemons,
       };
 
+    case SET_CURRENT_PAGE: 
+      let page = state.pagination;
+      let newPage
+      if(action.payload === 1){
+        newPage = page + 1;
+      }
+      if(action.payload === -1){
+        newPage = page - 1
+      }
+      return {
+        ...state,
+        pagination: newPage
+      }
+
     case CLEAN_DETAIL:
       return {
         ...state,
@@ -71,6 +88,12 @@ export default function reducer(state = initalState, action) {
         ...state,
         filteredPokemons: action.payload,
       };
+
+    case CLEAN_PAGINATION:
+      return {
+        ...state,
+        pagination: action.payload,
+      }
 
     case SORT:
       let orderedPokemons = [...state.pokemons];

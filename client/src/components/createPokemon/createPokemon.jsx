@@ -59,8 +59,10 @@ export default function CreatePokemon() {
 
   const [errors, setErrors] = useState({});
   let types = useSelector((state) => state.types);
+
   let dispatch = useDispatch();
   let history = useHistory()
+  
   useEffect(() => {
     dispatch(fetchTypes());
   }, [dispatch]);
@@ -93,9 +95,13 @@ export default function CreatePokemon() {
 
   function onSubmit(e) {
     e.preventDefault();
-    dispatch(createPokemon(pokemon));
-    alert('Pokemon created, go back to see it');
-    history.push('/')
+    let errors = validate(pokemon)
+    if(!Object.keys(errors)){
+      dispatch(createPokemon(pokemon));
+      alert('Pokemon created, go back to see it');
+      history.push('/')
+    }
+    alert('Pokemon not created, you need pass all properties')
   }
 
   function handleDeleteSelection(e) {
