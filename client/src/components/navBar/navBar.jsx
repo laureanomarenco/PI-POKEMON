@@ -24,6 +24,9 @@ export default function NavBar() {
       <Link to="/createPokemon">
         <button className={n.btn_create}>CREATE POKEMON</button>
       </Link>
+      <Link to="/chooseYourPokemon">
+        <button className={n.btn_play}>LET'S PLAY</button>
+      </Link>
     </div>
     </>
   );

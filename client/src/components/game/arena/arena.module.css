@@ -1,0 +1,27 @@
+.background {
+    min-height: 100vh;
+    height: auto;
+    width: 100vw;
+    background-image: url('../../../assets/forest2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.pokemon {
+    position: absolute;
+    margin-top: 40vh;
+    margin-left: 20vw;
+    height: auto;
+    width: 20rem;
+}
+
+.enemie {
+    position: absolute;
+    margin-top: 20vh;
+    margin-left: 60vw;
+    height: auto;
+    width: 20rem;
+}

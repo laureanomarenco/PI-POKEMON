@@ -33,6 +33,9 @@ module.exports = (sequelize) => {
     imageDefault: {
       type: DataTypes.STRING,
     },
+    imageBack: {
+      type: DataTypes.STRING,
+    },
     imageShiny: {
       type: DataTypes.STRING,
     },

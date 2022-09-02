@@ -4,6 +4,9 @@ import LandingPage from "./components/landingPage/landingPage.jsx";
 import Home from './components/home/home';
 import PokemonDetails from "./components/pokemonDetails/pokemonDetails.jsx";
 import CreatePokemon from "./components/createPokemon/createPokemon.jsx";
+import Choose from "./components/game/choose/choose.jsx";
+import Arena from "./components/game/arena/arena.jsx";
+
 import "./App.css";
 
 function App() {
@@ -21,6 +24,12 @@ function App() {
         </Route>
         <Route path="/createPokemon">
           <CreatePokemon />
+        </Route>
+        <Route path="/chooseYourPokemon">
+          <Choose />
+        </Route>
+        <Route path="/arena/:id">
+          <Arena />
         </Route>
       </Switch>
     </div>

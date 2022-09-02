@@ -24,8 +24,31 @@
     background-color: rgb(50, 200, 75);
     color: rgb(255, 255, 255);
     padding: 1vh;
+    margin-right: 1em;
     border: 3px solid rgb(0, 0, 0);
     box-shadow: inset -4px -4px 0 rgb(50, 160, 75);
+}
+
+.btn_play {
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 100;
+    font-size: 12px;
+    background-color: rgb(69, 88, 253);
+    color: rgb(255, 255, 255);
+    padding: 1vh;
+    border: 3px solid rgb(0, 0, 0);
+    box-shadow: inset -4px -4px 0 rgb(26, 56, 255);
+}
+
+.btn_play:hover    {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    background-color: rgb(48, 69, 255);
+    color: rgb(245, 245, 245);
+    padding: 1vh;
+    border: 3px solid rgb(0, 0, 0);
+    box-shadow: inset -5px -5px 0 rgb(18, 42, 255);
+    cursor: pointer;
 }
 
 .btn_create:hover    {

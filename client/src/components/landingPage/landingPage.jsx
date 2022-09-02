@@ -2,6 +2,7 @@ import pikachu from "../../assets/pikachu-two-gif.gif";
 import github from "../../assets/github.png";
 import linkedin from "../../assets/in.png";
 import l from "./landingPage.module.css";
+import Choose from "../game/choose/choose";
 
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
